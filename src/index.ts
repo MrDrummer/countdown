@@ -19,12 +19,10 @@ export const generateIntervals = (breakpoints: Breakpoint[], targetDate: Date, c
   for (const i in breakpoints) {
     const bp = breakpoints[i]
     const nextBp = breakpoints[parseInt(i) + 1]
-
-
-
-    console.log("bp :", bp)
     const fits = Math.floor(leftToFit / bp.every)
-    if (fits === 1 && bp.every === nextBp?.lessThan) continue
+
+
+
     console.log(`fits : ${ fits }`)
 
     intervals.push(...Array(fits).fill(bp.every))
